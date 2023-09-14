@@ -1,0 +1,20 @@
+--SELECT *
+--FROM dbo.CovidDeaths
+
+--SELECT *
+--FROM dbo.CovidVaccines
+
+--SELECT Location, date, total_cases, new_cases, total_deaths, population
+--FROM dbo.CovidDeaths
+
+--total cases and total deaths
+-- covid death percentage in nigeria
+SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
+FROM dbo.CovidDeaths
+WHERE Location like '%nigeria%'
+
+-- total cases and population
+
+SELECT Location, date, total_cases, population, (total_cases/population)*100 as ContaminatedPercentage
+FROM dbo.CovidDeaths
+WHERE Location like '%nigeria%'
